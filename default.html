@@ -10,27 +10,40 @@
 <link rel="stylesheet" href="mystyle.css">
 <title>Club Toho</title>
 <style>
-body{
-    overflow: hidden;
+body{ 
+    background-color: #222; 
+    margin-top: 60px;
 }
+
+#banner{
+    margin-bottom: 60px;
+}
+
+#youtube-vid-section{
+    background: #eee;
+    padding:3px;
+    margin-bottom: 60px;
+}
+
 </style>
 <body>
-
-<iframe id="video" src="http://www.youtube.com/embed/z22nzBVLCto?list=PLJZCr76kzld9pvbshTrm0AcDvc-gwJ81Y?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+<div class="container">
+    <div id="banner" class="row text-center">
+        <img src="banner.png" alt="Club Toho Banner">
+    </div>
+    <div id="youtube-vid-section">
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/z22nzBVLCto?list=PLJZCr76kzld9pvbshTrm0AcDvc-gwJ81Y" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="jquery.fitvids.js"></script>
 <script>
-
-$(function(){
-  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
-
-  // If you want to keep full screen on window resize
-  $(window).resize(function(){
-    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+  $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $("#youtube-vid-section").fitVids();
   });
-
-});
 </script>
 </body>
 </html>
